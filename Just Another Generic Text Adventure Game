@@ -1,6 +1,6 @@
 #Isso está programado em Python
-#Esse código foi programado em 11.05.2024 usando o Google Gemini 1.5 Pro do Google Ai Studio
-#Você pode rodá-lo no Google Colab através desse link: https://colab.research.google.com/drive/1PhXHOiYTDzSuSEso5T1EpeAqC3TBqj3I
+#Esse código foi programado em 11.05.2024 usando o Google Gemini 1.5 Pro do Google Ai Studio para a Imersão 2.0 Alura + Google Gemini
+#Você pode rodá-lo no Google Colab através desse link: https://colab.research.google.com/drive/1Ze84AhXJZ3ROS9URIL9HkNc_ljq_xp_C?usp=sharing
 
 def mostrar_intro():
   print("Welcome to the Text Adventure! Get ready to practice your English.")

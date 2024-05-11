@@ -1,1 +1,72 @@
+def mostrar_intro():
+  print("Welcome to the Text Adventure! Get ready to practice your English.")
+  print("You find yourself in a mysterious forest. You can see a path to the NORTH and a dark cave to the EAST.")
 
+def mostrar_situacao(sala):
+  print("\nYou are in", sala["descricao"])
+  print("You see:", ", ".join(sala["objetos"]))
+  if "saidas" in sala:
+    print("You can go:", ", ".join(sala["saidas"]))
+
+def obter_comando():
+  return input("What do you want to do? ").upper()
+
+def processar_comando(comando, sala, inventario):
+  if comando.startswith("GO"):
+    direcao = comando.split(" ")[1]
+    if direcao in sala["saidas"]:
+      proxima_sala = sala["saidas"][direcao]
+      return salas[proxima_sala], inventario
+    else:
+      print("You can't go that way!")
+      return sala, inventario
+  elif comando.startswith("TAKE"):
+    objeto = comando.split(" ")[1]
+    if objeto in sala["objetos"]:
+      sala["objetos"].remove(objeto)
+      inventario.append(objeto)
+      print("You took the", objeto)
+      return sala, inventario
+    else:
+      print("There is no", objeto, "here!")
+      return sala, inventario
+  elif comando == "INVENTORY":
+    print("You are carrying:", ", ".join(inventario))
+    return sala, inventario
+  else:
+    print("I don't understand.")
+    return sala, inventario
+
+# --- Dados do Jogo ---
+salas = {
+  "forest": {
+    "descricao": "a clearing in the forest",
+    "objetos": ["key", "map"],
+    "saidas": {"NORTH": "cabin", "EAST": "cave"}
+  },
+  "cabin": {
+    "descricao": "a small wooden cabin",
+    "objetos": ["axe"],
+    "saidas": {"SOUTH": "forest"}
+  },
+  "cave": {
+    "descricao": "a dark and damp cave",
+    "objetos": ["treasure"],
+    "saidas": {"WEST": "forest"}
+  }
+}
+
+# --- Loop Principal do Jogo ---
+mostrar_intro()
+sala_atual = salas["forest"]
+inventario = []
+
+while True:
+  mostrar_situacao(sala_atual)
+  comando = obter_comando()
+  sala_atual, inventario = processar_comando(comando, sala_atual, inventario)
+
+  # Condição de Vitória
+  if "treasure" in inventario:
+    print("\nCongratulations! You found the treasure! You win!")
+    break

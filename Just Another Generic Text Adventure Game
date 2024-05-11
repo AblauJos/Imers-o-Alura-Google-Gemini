@@ -1,3 +1,7 @@
+#Isso está programado em Python
+#Esse código foi programado em 11.05.2024 usando o Google Gemini 1.5 Pro do Google Ai Studio
+#Você pode rodá-lo no Google Colab através desse link: https://colab.research.google.com/drive/1PhXHOiYTDzSuSEso5T1EpeAqC3TBqj3I
+
 def mostrar_intro():
   print("Welcome to the Text Adventure! Get ready to practice your English.")
   print("You find yourself in a mysterious forest. You can see a path to the NORTH and a dark cave to the EAST.")

@@ -1,0 +1,1 @@
+E se fosse possível treinar inglês através de um jogo de aventura de texto? Em Just Another Generic Text Adventure Game isso é possível! Ele é bem simples e curto, talvez tenha bugs (até porque esse é meu primeiro jogo), mas pelo menos a ideia é promissora (não sei se eu posso dizer o mesmo da execução)
